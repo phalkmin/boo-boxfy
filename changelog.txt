@@ -1,0 +1,95 @@
+boo-boxfy changelog
+
+Version 2.0.3 - 12-May-2010
+	Fixed a bug that does not show "save options" button after pressing "check" button, on options page
+	Fixed a bug that occurrs when trying to boo-boxfy a image auto-linked by wordpress by default
+	Added development version (not minified) of all files
+
+Version 2.0.2 - 7-Apr-2010
+	Fix e-mail check
+
+Version 2.0.1 - 26-Jan-2010
+	Fix commas check
+
+Version 2.0.0 - 27-Jul-2009
+	New interface
+	New tinymce plugin
+	Fix script tag in rte
+	Text tags in html mode
+	Without external files
+
+Version 1.7.2 - 25-Mai-2009
+	Fix validate email
+	Fix wordpress 2.8
+
+Version 1.7 - 25-Mai-2009
+	Automatic config affiliates and email
+
+Version 1.6.1 - 6-Mai-2009
+	Fix load
+
+Version 1.6 - 6-Mai-2009
+	New boo-boxfy settings interface
+	Change widget formats
+	Fix window.onload in autotag
+
+Version 1.5.3 - 22-Apr-2009
+	widget format default
+
+Version 1.5.2 - 22-Apr-2009
+	Monetize button for HTML mode
+	External files and minified
+
+Version 1.5.1 - 31-Mar-2009
+	New monetize button in Tinymce Panel
+	boo-box tagging-tool for wordpress
+	Fix config page
+
+Version 1.4.5 - 27-Mar-2009
+	Fix check tinymce in loading
+
+Version 1.4.4 - 27-Mar-2009
+	Fix 'Monetize' button
+
+Version 1.4.3 - 24-Mar-2009
+	Correct email config
+	Link for new signup
+	Fix to load new boo-box API
+
+Version 1.4.2 - 10-Feb-2009
+	Fix autotag config position
+
+Version 1.4.1 - 09-Feb-2009
+	Enable and disable autotagging
+
+Version 1.4 - 02-Feb-2009
+	Added autotagging
+	Fix 2.7 Styles
+
+Version helpers.getRoot() - 15-Dez-2008
+	No more YouTube preview image on RSS, sorry :(
+	WP-2.7 support
+
+Version 1.2 - 25-Sep-2008
+	YouTube preview images now on RSS!
+
+Version 1.1 - 12-Sep-2008
+	Correct IE bug with YouTube videos in HTML mode, disabled in IE
+
+Version 1.0 - 04-Sep-2008
+	Added option to not display widget in home
+	Fix MCE->HTML->MCE bug
+	No longer use the youtube link placed in the text. now only inside object
+	Changed from GNU to MIT license
+	Offers to user to insert boo-box even when the image is linked
+
+Version 0.9 - 29-Aug-2008
+	Fix compatibility with bootube
+	Use the latest saved format in the boo-profile
+
+Version 0.8 - 7-Aug-2008
+	Fixes
+
+Version 0.7 - 17-Jul-2008
+	Added custom tag input for widget
+	Added option to use post tag for widget

@@ -1,0 +1,106 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: wp 25\n"
+"PO-Revision-Date: 2008-07-09 19:09-0300\n"
+"Last-Translator: boo-box <>\n"
+"Language-Team: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "boo-box settings"
+msgstr "opções da boo-box"
+
+msgid "Saved."
+msgstr "Opções salvas."
+
+msgid "boo-box profile"
+msgstr "cadastro na boo-box"
+
+msgid "your boo-profile e-mail"
+msgstr "e-mail do seu boo-profile"
+
+msgid "e-mail not registered"
+msgstr "e-mail não cadastrado"
+
+msgid "Create your boo-box account"
+msgstr "Fazer cadastro na boo-box"
+
+msgid "Blog Settings"
+msgstr "configurações do blog"
+
+msgid "e-commerce reference code"
+msgstr "Código de referência do e-commerce"
+
+msgid "carregando"
+msgstr "loading"
+
+msgid "Widget"
+msgstr "widget"
+
+msgid "Set reference code"
+msgstr "Configurar códigos de referência"
+
+msgid "Update"
+msgstr "Atualizar"
+
+msgid "Product limit per widget"
+msgstr "Limite de produtos por widget"
+
+msgid "Width"
+msgstr "Largura"
+
+msgid "Use the last tag on the post to search products on the widget, in case the defined tag is not specific to boo-box."
+msgstr "Usar última tag do post para busca de produtos no widget, caso não seja definida tag específica para boo-box."
+
+msgid "Save Options"
+msgstr "Salvar opções"
+
+msgid "If you have questions or doubts, please contact us at:"
+msgstr "Se você tiver alguma dúvida, utilize o e-mail"
+
+msgid "boo-box is almost ready"
+msgstr "boo-box está quase pronto"
+
+msgid "Você deve configura-lo"
+msgstr "You must configure it to work."
+
+msgid "Close"
+msgstr "Fechar"
+
+msgid "Apply"
+msgstr "Aplicar"
+
+msgid "Select"
+msgstr "Selecione"
+
+msgid "Configure"
+msgstr "Configurar"
+
+msgid "Images / YouTube"
+msgstr "Imagens / YouTube"
+
+msgid "Choose tags that will be used to search for products in the boo-box."
+msgstr "Escolha tags que serão usadas para buscar produtos na boo-box."
+
+msgid "Você precisa configurar a boo-box antes de utiliza-la."
+msgstr "You need to set up the boo-box before using it."
+
+msgid "Tags to boo-box widget:"
+msgstr "Tags para boo-box widget:"
+
+msgid "There is no content in image or video that you can apply boo-box."
+msgstr "Não existe nenhum conteúdo em imagem ou vídeo que você possa aplicar boo-box."
+
+msgid "Not display widget in home"
+msgstr "Não exibir widget na página inicial"
+
+msgid "Enable boo-box autotagging"
+msgstr "Ativar boo-box autotagging"
+
+msgid "image"
+msgstr "imagem"
+
+msgid "remove boo-box"
+msgstr "remover boo-box"

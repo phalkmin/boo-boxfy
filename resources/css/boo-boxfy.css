@@ -1,0 +1,617 @@
+#booPanelContent {
+padding:0 10px 10px;
+}
+
+#booPanelContent div {
+margin:3px 0;
+}
+
+#boo-warning {
+padding-left:40px;
+background:url(http://static.boo-box.com/images/booboxfy-wp/boo-icon.gif) #EAF3FA no-repeat left center;
+}
+
+#bboxxy_box {
+height:400px;
+width:730px;
+overflow:auto;
+margin:8px auto;
+}
+
+#bboxxy_widget {
+background:#f1f1f1;
+}
+
+#bboxxy_table {
+margin:0 auto;
+}
+
+#bboxxy_table td {
+width:175px;
+overflow:hidden;
+text-align:center;
+vertical-align:bottom;
+height:180px;
+}
+
+#bboxxy_btn {
+cursor:pointer;
+margin-bottom:4px;
+}
+
+#bboxxy_header {
+background:url(http://static.boo-box.com/images/booboxfy-wp/topbox.gif) repeat-x;
+color:#000;
+margin:0 0 5px;
+padding:3px 3px 3px 8px;
+}
+
+.jqmClose,#bboxxy_monetize {
+display:block;
+background:url(http://static.boo-box.com/images/booboxfy-wp/btback.gif) repeat-x;
+height:13px;
+text-align:center;
+float:right;
+cursor:pointer;
+text-decoration:none;
+margin:0 5px;
+padding:5px;
+}
+
+.jqmClose {
+width:90px;
+border-bottom:2px solid #c30000;
+}
+
+#bboxxy_monetize {
+width:90px;
+border-bottom:2px solid #01800d;
+}
+
+#bboxxy_dialog .bboxxy_image {
+width:175px;
+height:145px;
+overflow:hidden;
+}
+
+#bboxxy_dialog .bboxxy_flash {
+position:relative;
+z-index:3001;
+opacity:100;
+}
+
+#bboxxy_dialog .tags {
+border-bottom:1px solid #ccc;
+margin:10px 0 0;
+padding:0 0 10px;
+}
+
+#bboxxy_dialog .tags input {
+width:160px;
+}
+
+#bboxxy_box_btn:hover {
+text-decoration:none;
+}
+
+#bboxxy_dialog h2 {
+font-size:1em;
+color:#08C;
+margin:8px 0;
+}
+
+#bboxxy_dialog #bboxxy_tip2 {
+font-size:.8em;
+color:#555;
+}
+
+.bb-custom-rss-holder {
+margin-left:10px;
+}
+
+#bb-custom-editform {
+clear:both;
+}
+
+#bboxxy_dialog .bboxxy_configurelink {
+width:130px;
+display:block;
+background:url(http://static.boo-box.com/images/booboxfy-wp/boo-config-icon.gif) #EAF3FA no-repeat left center;
+margin:10px 0;
+padding:5px 5px 5px 40px;
+}
+
+#booboxfy_option ul,#booboxfy_option li {
+list-style:none;
+margin:0;
+padding:0;
+}
+
+#booboxfy_option a {
+color:#000;
+}
+
+#booboxfy_option ul ul {
+padding-left:10px;
+}
+
+#booboxfy_option ul ul li {
+margin:5px 0 0;
+}
+
+#booboxfy_option h2 {
+font-size:1.4em;
+background:#EAF3FA;
+margin:20px 0 10px;
+padding:5px;
+}
+
+#bboxxy_table td.hasBooBox {
+border:1px #090 dashed;
+}
+
+#bboxxy_table td .callaction {
+top:-135px;
+text-align:center;
+display:block;
+position:relative;
+margin-top:-16px;
+background:#090;
+color:#FFF;
+font-family:arial,helvetica,sans-serif!important;
+font-size:12px;
+font-weight:700;
+height:16px;
+line-height:16px;
+letter-spacing:0;
+filter:alpha(opacity=70);
+-moz-opacity:.7;
+opacity:.7;
+width:100%;
+text-transform:lowercase;
+}
+
+#bboxxy_table td .icon-div {
+text-align:left;
+}
+
+#bboxxy_table td.hasBooBox .icon-box {
+text-align:left!important;
+left:0!important;
+top:-127px;
+display:block;
+position:relative;
+width:32px;
+height:32px;
+margin-top:-32px;
+background-image:none;
+z-index:1;
+filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="http://static.boo-box.com/images/booboxfy-wp/boo-box-icon-w32.png",sizingMethod="scale");
+}
+
+div#bb-tt-simulation {
+width:600px;
+height:198px;
+}
+
+#bb-tt-simulation ul#bb-tt-offerslist li.bb-tt-offeritem {
+background-color:#FFF;
+border:1px solid #CCC;
+display:none;
+float:left;
+height:80px;
+overflow:hidden;
+width:184px;
+margin:2px;
+padding:6px;
+}
+
+#bb-tt-output #bb-tt-url {
+border:0;
+font-family:Monaco,Arial,sans-serif;
+font-size:11px;
+height:30px;
+width:600px;
+padding:4px;
+}
+
+#bb-tt-simulation ul#bb-tt-offerslist {
+width:608px;
+height:196px;
+_margin-top:15px;
+padding:2px;
+}
+
+ul#bb-tt-offerslist li.bb-tt-offeritem span.bb-tt-offerimage {
+background-color:#FFF;
+background-repeat:no-repeat;
+background-position:center center;
+float:left;
+height:80px;
+width:79px;
+}
+
+ul#bb-tt-offerslist li.bb-tt-offeritem span.bb-tt-offerdescription {
+float:left;
+height:80px;
+margin-left:4px;
+width:97px;
+}
+
+.bb-tt-offertitle {
+color:#666;
+display:block!important;
+height:60px;
+overflow:hidden;
+}
+
+ul#bb-tt-offerslist li.bb-tt-offeritem span.bb-tt-offerdescription span.bb-tt-offerprice {
+color:#000;
+display:block;
+font-size:13px;
+text-align:right;
+font-weight:700;
+}
+
+#bb-tt-simulation ul#bb-tt-offerslist li.bb-tt-loadingoffers {
+float:left;
+text-align:center;
+margin-top:75px;
+width:100%;
+color:#666;
+font-size:2em;
+}
+
+#bb-tt-simulation ul#bb-tt-offerslist li.bb-tt-offersnotloaded {
+display:none;
+float:left;
+text-align:center;
+margin-top:75px;
+width:100%;
+color:#000;
+font-size:2em;
+}
+
+div#boobox-links {
+width:100%;
+margin-top:6px!important;
+border:1px solid #ccc!important;
+display:table;
+}
+
+div#boobox-links.logado {
+border:1px solid #DEDEDE!important;
+}
+
+div#boobox-links ul {
+list-style-type:none;
+}
+
+div#boobox-links ul#boobox-links-div-ul {
+clear:left;
+margin:10px 0 0 10px;
+padding:0;
+}
+
+div#boobox-links ul#boobox-links-div-ul li.boobox-links-li ul.boobox-links-desc {
+position:absolute;
+left:-1px;
+top:21px;
+width:250px;
+background-color:#fff;
+border:1px solid #ccc;
+display:none;
+cursor:auto!important;
+margin:0;
+padding:0!important;
+}
+
+div#boobox-links ul#boobox-links-div-ul li.boobox-links-li ul.boobox-links-desc li {
+border:2px solid #fff;
+color:#000;
+cursor:pointer;
+background-position:3px 50%;
+background-repeat:no-repeat;
+margin:0;
+padding:5px 0 5px 23px;
+}
+
+div#boobox-links ul#boobox-links-div-ul li.boobox-links-li ul.boobox-links-desc li:hover {
+border:2px solid #a7c520;
+}
+
+div#boobox-links .zem-clear {
+clear:left;
+height:0;
+margin:0;
+padding:0;
+}
+
+div#boobox-links .tip_atualizando {
+color:#d54e21;
+}
+
+#boobox-links-simulate {
+font-size:.8em;
+display:none;
+clear:left;
+margin:10px;
+}
+
+#boobox-links-offers {
+list-style:none;
+padding:0;
+}
+
+#boobox-links-offers li {
+list-style:none;
+display:block;
+clear:both;
+}
+
+#boobox-links-offers .bb-tt-offerimage {
+display:block;
+width:40px;
+height:40px;
+float:left;
+margin:5px;
+}
+
+#boobox-links-offers .bb-tt-offertitle {
+display:block;
+padding-left:5px;
+color:#666;
+}
+
+#boobox-links-offers .bb-tt-offerprice {
+margin-top:4px;
+font-size:.8em;
+font-weight:700;
+}
+
+#boobox-links-div-ul,#boobox-links-content,#boobox-links-tip {
+float:left;
+display:none;
+margin:0;
+padding:0 1em;
+}
+
+#boobox-links-tip {
+font-size:.8em;
+margin:0 5px;
+padding:0;
+}
+
+#boobox-links-content {
+clear:left;
+padding:5px 0 10px 10px;
+}
+
+#boobox-links-content,#boobox-links-tip {
+margin-top:2em;
+}
+
+#boobox-links-div-ul li {
+display:block;
+float:left;
+position:relative;
+border:1px solid #CCC;
+line-height:1em;
+text-align:center;
+margin:0 5px 2px 0;
+padding:2px;
+}
+
+div#boobox-links li.hasBooBox {
+border:1px #090 solid;
+}
+
+div#boobox-links li.hasBooBox a {
+color:#789799;
+text-decoration:none;
+}
+
+div#boobox-links li.hasBooBox a:hover {
+text-decoration:underline;
+color:#789799;
+}
+
+#boobox-links .booboxfy_simulate {
+display:block;
+margin:5px 0 0;
+}
+
+#boobox-links .booboxfy_simulate a {
+color:#3C7999!important;
+}
+
+#boobox-links .booboxfy_remove {
+font-size:.9em;
+}
+
+#boobox-links .booboxfy_remove:hover {
+font-size:.9em;
+color:#d54e21!important;
+}
+
+div#boobox-links li .callaction {
+top:24px;
+text-align:center;
+display:block;
+position:relative;
+margin-top:-16px;
+background:#090;
+color:#FFF;
+font-family:arial,helvetica,sans-serif!important;
+font-size:12px;
+font-weight:700;
+height:16px;
+line-height:16px;
+letter-spacing:0;
+filter:alpha(opacity=70);
+-moz-opacity:.7;
+opacity:.7;
+width:125px;
+text-transform:lowercase;
+}
+
+div#boobox-links li.hasBooBox .icon-box {
+top:32px;
+display:block;
+position:relative;
+width:32px;
+height:32px;
+margin-top:-32px;
+background-image:none;
+z-index:1;
+filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="http://static.boo-box.com/images/booboxfy-wp/boo-box-icon-w32.png",sizingMethod="scale");
+}
+
+ul.boobox-links-desc {
+position:absolute;
+top:1.3em;
+left:-1px;
+width:250px;
+background-color:#FFF;
+font-size:100%;
+opacity:.90;
+border:1px solid #ffc572;
+display:none;
+z-index:98;
+cursor:auto!important;
+padding:10px 4px!important;
+}
+
+ul#boobox-links-content li {
+float:left;
+}
+
+div#boobox-links ul#boobox-links-content li {
+float:left;
+position:relative;
+border:1px solid #ccc;
+background:url(http://static.boo-box.com/images/booboxfy-wp/arr_filter2.png) transparent 100% 50% no-repeat;
+line-height:2em;
+cursor:pointer;
+margin:0 5px 0 0;
+padding:0 20px 0 5px;
+}
+
+div#boobox-links ul#boobox-links-content li:hover {
+border:1px #090 dashed;
+color:#ff9800;
+}
+
+div#boobox-links ul#boobox-links-content li.selected {
+border:1px #090 solid;
+color:#ff9800;
+}
+
+div#boobox-links ul#boobox-links-content li span {
+padding-left:20px;
+}
+
+:first-child+html div#boobox-links ul#boobox-links-content li.boobox-links-li span {
+display:inline-block;
+width:16px;
+height:16px;
+padding:0;
+}
+
+div#boobox-messages {
+display:none;
+background:#FFFEEC;
+font-size:.9em;
+padding:5px;
+}
+
+div#boobox-messages h3 {
+font-size:.9em;
+font-weight:400;
+background:none;
+margin:0;
+padding:0;
+}
+
+div#boobox-messages a {
+color:#789799;
+display:block;
+text-decoration:none;
+}
+
+div#boobox-messages a:hover {
+color:#789799;
+text-decoration:underline;
+}
+
+div.wpunrounded {
+margin-left:0!important;
+}
+
+#boobox-preferences .boobox-title {
+float:left;
+margin:0 8px 0 0;
+}
+
+#boobox-preferences .config {
+float:right;
+text-decoration:none;
+}
+
+#boobox-preferences .click_black {
+text-decoration:none;
+color:#08C;
+background:transparent url(http://static.boo-box.com/images/booboxfy-wp/external.png) no-repeat scroll right center;
+padding-right:13px;
+}
+
+#boobox-links #markall {
+float:left;
+margin-bottom:-10px;
+}
+
+.boobox-simulate-tip {
+float:left;
+margin-bottom:8px;
+}
+
+.boobox-simulate-close {
+float:right;
+}
+
+div#boobox-links .new_link,div#boobox-links .new_widget {
+margin-right:10px;
+margin-top:2px;
+float:left;
+font-size:.8em;
+}
+
+div#boobox-links .new_link:hover,div#boobox-links .new_widget:hover {
+color:#08C;
+}
+
+div#boobox-links #boobox-links-newlink,div#boobox-links #boobox-widgetnew {
+float:left;
+display:none;
+}
+
+#booManual {
+background-color:#ffd;
+}
+
+#bboxxy_preview,#booboxfy_option .boo_tip,#bboxxy_table td .icon-box,div#boobox-links li .icon-box {
+display:none;
+}
+
+#bboxxy_table td.hasBooBox span[class=icon-box],div#boobox-links li.hasBooBox span[class=icon-box] {
+background:url(http://static.boo-box.com/images/booboxfy-wp/boo-box-icon-w32.png) no-repeat left center;
+}
+
+ul#bb-tt-offerslist li.bb-tt-offeritem span.bb-tt-offerdescription a.bb-tt-offerlink,#boobox-links-offers #boobox-links-simulatetip,div#boobox-links #boobox-link-newinput {
+display:block;
+}
+
+#boobox-preferences .config:hover,#boobox-preferences .click_black:hover {
+color:#08C;
+text-decoration:underline;
+}
