@@ -98,14 +98,14 @@ var bb_mailform = function bb_mailform()
                     b.html(" Ok!");
 
                     $("#boo_booid").val(f.userid);
-                    $("#boo_advanced_button, .button-primary").show();
+                    $("#boo_advanced_options, #boo_advanced_button, .button-primary").show();
                 }
                 else
                 {
                     b.html('<br />Usuário não existente. Verifique se seu e-mail é o mesmo cadastrado na boo-box.<br />Tente novamente ou <a href="http://boo-box.com/site/setup/signup" target="_blank">crie sua conta</a>.');
 
                     $("#boo_booid").val('');
-                    $("#boo_advanced_button, .button-primary").hide();
+                    $("#boo_advanced_options, #boo_advanced_button, .button-primary").hide();
                 }
             }
         });
