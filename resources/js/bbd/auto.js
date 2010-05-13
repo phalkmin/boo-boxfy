@@ -10,8 +10,7 @@ bbD.auto = {
         this.tag.update();
         this.tag.init_watch()
     },
-    help
-    ers: {
+    helpers: {
         get_editor: function () {
             var b = null,
                 a = null,
