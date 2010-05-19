@@ -99,6 +99,11 @@ var bb_mailform = function bb_mailform()
 
                     $("#boo_booid").val(f.userid);
                     $("#boo_advanced_options, #boo_advanced_button, .button-primary").show();
+
+                    $("#boo_advanced_options input[name=boo_booid]").val(f.userid);
+                    $("#boo_advanced_options input[name=boo_boomail]").val(f.email);
+
+										bb_callOptions_withbid(f.email, f.lastbid);
                 }
                 else
                 {
@@ -106,6 +111,8 @@ var bb_mailform = function bb_mailform()
 
                     $("#boo_booid").val('');
                     $("#boo_advanced_options, #boo_advanced_button, .button-primary").hide();
+
+                    document.getElementById("boo_booaffid").innerHTML = '';
                 }
             }
         });

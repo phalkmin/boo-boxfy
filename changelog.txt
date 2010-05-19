@@ -1,5 +1,9 @@
 boo-boxfy changelog
 
+Version 2.0.4 - 19-May-2010
+	Fixed a bug that does not save the correct e-mail account and affiliate code
+	Added more translations for pt_BR
+
 Version 2.0.3 - 12-May-2010
 	Fixed a bug that does not show "save options" button after pressing "check" button, on options page
 	Fixed a bug that occurrs when trying to boo-boxfy a image auto-linked by wordpress by default

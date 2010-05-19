@@ -115,7 +115,7 @@ function booboxfy_config_submenu()
 							<?php }; ?>
 							<p>
 								<input name="boo_booid" type="hidden" id="boo_booid" value="<?php echo get_option("boo_booid"); ?>" size="25" />
-								<div class="submit"><input type="submit" id="boo_updateid" name="boo_updateid" value="Check" style="font-weight:bold;" />
+								<div class="submit"><input type="submit" id="boo_updateid" name="boo_updateid" value="<?php echo __("Check", "booboxfy"); ?>" style="font-weight:bold;" />
 								<?php if (!get_option("boo_booid")) { ?>
 									| <a href="http://boo-box.com/site/setup/signup" target="_blank"><?php echo __("create your boo-box account", "booboxfy"); ?></a>
 								<?php } ?>
@@ -130,23 +130,21 @@ function booboxfy_config_submenu()
 			// functions are inside boo-boxfy-config.js
 			bb_mailform();
 		</script>
-		<?php
-		// só mostra outras opções se tiver boo_booid
-		//if (get_option("boo_booid")) {
-		?>
 		<!-- Opções avançadas -->
-		<a id="boo_advanced_button" class="button" href="javascript:void(0);">Advanced options</a>
+		<a id="boo_advanced_button" class="button" href="javascript:void(0);"><?php echo __("Advanced options", "booboxfy"); ?></a>
 		<form method="post">
 			<div id="boo_advanced_options" style="display:none">
+        <input type="hidden" name="boo_booid" value="" />
+        <input type="hidden" name="boo_boomail" value="" />
 				<h3><?php echo __("Blog Settings", "booboxfy"); ?></h3>
 				<table class="form-table">
 					<tbody>
 						<tr valign="top">
 							<th scope="row">
-								<label for="boo_autotag">Autotag:</label>
+								<label for="boo_autotag"><?php echo __("boo-box automatic links", "booboxfy"); ?></label>
 							</th>
 							<td>
-								<input type="checkbox" name="boo_autotag" id="boo_autotag" <?php if (get_option("boo_autotag")) { echo "checked=\"checked\""; } ?> /> <label for="boo_autotag"><?php echo __("Enable boo-box autotagging", "booboxfy"); ?></label>
+								<input type="checkbox" name="boo_autotag" id="boo_autotag" <?php if (get_option("boo_autotag")) { echo "checked=\"checked\""; } ?> /> <label for="boo_autotag"><?php echo __("Enable automatic links", "booboxfy"); ?></label>
 							</td>
 						</tr>
 						<tr valign="top">
@@ -155,13 +153,7 @@ function booboxfy_config_submenu()
 							</th>
 							<td>
 								<span id="boo_booaffid">Loading...</span>
-								<p><a class="button" href="http://boo-box.com/profile/index" target="_blank">Modify affiliate</a></p>
-								<script type="text/javascript">
-									function bb_rcall() {
-										bb_callOptions_withbid('<?php echo get_option("boo_boomail"); ?>', '<?php echo get_option("boo_booaffid"); ?>');
-									}
-									bb_rcall();
-								</script>
+								<p><a class="button" href="http://boo-box.com/profile/index" target="_blank"><?php echo __("Modify affiliate", "booboxfy"); ?></a></p>
 							</td>
 						</tr>
 					</tbody>
@@ -185,7 +177,7 @@ function booboxfy_config_submenu()
 					<tbody>
 						<tr valign="top">
 							<th scope="row">
-								<label for="boo_formats">Format:</label>
+								<label for="boo_formats"><?php echo __("Format", "booboxfy"); ?>:</label>
 							</th>
 							<td>
 								<ul style="list-style:none" id="widgets-formats">
@@ -229,7 +221,7 @@ function booboxfy_config_submenu()
 						</tr>
 						<tr>
 							<th scope="row">
-								<label for="boo_width">More:</label>
+								<label for="boo_width"><?php echo __("More", "booboxfy"); ?>:</label>
 							</th>
 							<td>
 								<ul style="list-style:none">
@@ -244,7 +236,6 @@ function booboxfy_config_submenu()
 			<p><div class="submit"><input type="submit" class="button-primary" name="update_boobox" value="<?php echo __("Save Options", "booboxfy"); ?> &raquo;" /></div></p>
 		</form>
 		<!--Fim de opções avançadas -- >
-		<?php //} ?>
 		<p><?php echo __("If you have questions or doubts, please contact us at:", "booboxfy"); ?> <a href="mailto:contact@boo-box.com">contact@boo-box.com</a></p>
 	</div>
 <?php

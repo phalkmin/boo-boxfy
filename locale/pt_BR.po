@@ -96,11 +96,29 @@ msgstr "Não existe nenhum conteúdo em imagem ou vídeo que você possa aplicar
 msgid "Not display widget in home"
 msgstr "Não exibir widget na página inicial"
 
-msgid "Enable boo-box autotagging"
-msgstr "Ativar boo-box autotagging"
+msgid "boo-box automatic links"
+msgstr "boo-box links automáticos"
+
+msgid "Enable automatic links"
+msgstr "Ativar links automáticos"
 
 msgid "image"
 msgstr "imagem"
 
 msgid "remove boo-box"
 msgstr "remover boo-box"
+
+msgid "Format"
+msgstr "Formato"
+
+msgid "More"
+msgstr "Outros"
+
+msgid "Advanced options"
+msgstr "Opções avançadas"
+
+msgid "Check"
+msgstr "Verificar"
+
+msgid "Modify affiliate"
+msgstr "Modificar afiliado"
