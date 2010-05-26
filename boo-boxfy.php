@@ -3,7 +3,7 @@
 Plugin Name: boo-boxfy
 Plugin URI: http://boo-box.com
 Description: Allows you to monetize your content before posting.
-Version: 2.0.3
+Version: 2.0.4
 Author: boo-box team
 Author URI: http://boo-box.com
 
@@ -29,6 +29,8 @@ Author URI: http://boo-box.com
   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
   THE SOFTWARE.
 */
+
+define('BOOBOX_STATIC_VERSION', '2.0.4');
 
 // lang
 load_plugin_textdomain(booboxfy, PLUGINDIR . '/' . dirname(plugin_basename(__FILE__)));
@@ -62,11 +64,11 @@ function booboxfy_head()
   {
     echo "\n", '<!-- boo-boxfy (boo-box) -->';
     echo "\n", '<link rel="stylesheet" type="text/css" href="', $css, '" />';
-    echo "\n", '<script type="text/javascript" src="', $js, '?bid=', get_option('boo_booaffid'), '&lang=', get_option('boo_booafflang'), '&email=', get_option('boo_boomail'), '&version=', $wp_version, '" id="booboxfy"></script>';
-    echo "\n", '<script type="text/javascript" src="', $jsPanel, '"></script>';
-    echo "\n", '<script type="text/javascript" src="', $jsHelpers, '"></script>';
-    echo "\n", '<script type="text/javascript" src="', $jsManual, '"></script>';
-    echo "\n", '<script type="text/javascript" src="', $jsAutoTag, '"></script>';
+    echo "\n", '<script type="text/javascript" src="', $js, '?bid=', get_option('boo_booaffid'), '&lang=', get_option('boo_booafflang'), '&email=', get_option('boo_boomail'), '&version=', $wp_version, '&staticver=', BOOBOX_STATIC_VERSION, '" id="booboxfy"></script>';
+    echo "\n", '<script type="text/javascript" src="', $jsPanel, '?', BOOBOX_STATIC_VERSION, '"></script>';
+    echo "\n", '<script type="text/javascript" src="', $jsHelpers, '?', BOOBOX_STATIC_VERSION, '"></script>';
+    echo "\n", '<script type="text/javascript" src="', $jsManual, '?', BOOBOX_STATIC_VERSION, '"></script>';
+    echo "\n", '<script type="text/javascript" src="', $jsAutoTag, '?', BOOBOX_STATIC_VERSION, '"></script>';
     echo "\n", '<script type="text/javascript">',
          "\n", '  $(document).ready(function()',
          "\n", '  {',
@@ -78,7 +80,7 @@ function booboxfy_head()
   }
   else if (preg_match('!/(plugins|options-general)\.php!i', $_SERVER['REQUEST_URI'])) 
   {
-    echo "\n", '<script type="text/javascript" src="', $jsConfig, '"></script>';
+    echo "\n", '<script type="text/javascript" src="', $jsConfig, '?', BOOBOX_STATIC_VERSION, '"><i/script>';
   }
 
   $__ = '__';
