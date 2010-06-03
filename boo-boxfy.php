@@ -3,7 +3,7 @@
 Plugin Name: boo-boxfy
 Plugin URI: http://boo-box.com
 Description: Allows you to monetize your content before posting.
-Version: 2.0.4
+Version: 2.0.5
 Author: boo-box team
 Author URI: http://boo-box.com
 
@@ -30,7 +30,7 @@ Author URI: http://boo-box.com
   THE SOFTWARE.
 */
 
-define('BOOBOX_STATIC_VERSION', '2.0.4');
+define('BOOBOX_STATIC_VERSION', '2.0.5');
 
 // lang
 load_plugin_textdomain(booboxfy, PLUGINDIR . '/' . dirname(plugin_basename(__FILE__)));
@@ -83,7 +83,15 @@ function booboxfy_head()
     echo "\n", '<script type="text/javascript" src="', $jsConfig, '?', BOOBOX_STATIC_VERSION, '"><i/script>';
   }
 
-  $__ = '__';
+  $__ = array
+  (
+    'none'      => __('There is no content in image or video that you can apply boo-box.', 'booboxfy'),
+    'noconfig'  => __('You need to set up the boo-box before using it.', 'booboxfy'),
+    'selectone' => __('Select', 'booboxfy'),
+    'configbtn' => __('Configure', 'booboxfy'),
+    'remove'    => __('remove boo-box', 'booboxfy'),
+    'image'     => __('image', 'booboxfy')
+  );
 
   // para traduzir mensagens do JS
   echo <<<HTML
@@ -94,14 +102,14 @@ function booboxfy_head()
     {
       tag         : 'Escolha tags que serão usadas para buscar produtos na boo-box.',
       cont        : 'Imagens / YouTube',
-      none        : '{$__('There is no content in image or video that you can apply boo-box.', 'booboxfy')}',
-      noconfig    : '{$__('You need to set up the boo-box before using it.', 'booboxfy')}',
+      none        : '{$__['none']}',
+      noconfig    : '{$__['noconfig']}',
       closewindow : 'Fechar', 
       applyto     : 'Aplicar', 
-      selectone   : '{$__('Select', 'booboxfy')}', 
-      configbtn   : '{$__('Configure', 'booboxfy')}', 
-      remove      : '{$__('remove boo-box', 'booboxfy')}', 
-      image       : '{$__('image', 'booboxfy')}'
+      selectone   : '{$__['selectone']}', 
+      configbtn   : '{$__['configbtn']}', 
+      remove      : '{$__['remove']}', 
+      image       : '{$__['image']}'
     }
 
     $ = jQuery.noConflict();
@@ -111,7 +119,6 @@ function booboxfy_head()
       $('#boo_advanced_button').click(function()
       {
         $('#boo_advanced_options').toggle();
-        //$(this).hide();
       });
     });
 
@@ -191,7 +198,7 @@ function show_widget($content)
   $widget_keyword = '';
 
   // se tiver keyword definida
-  if (empty($keywords)) 
+  if ( ! empty($keywords)) 
   {
     $widget_keyword = $keywords;
   }
