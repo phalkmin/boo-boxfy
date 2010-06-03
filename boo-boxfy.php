@@ -80,7 +80,7 @@ function booboxfy_head()
   }
   else if (preg_match('!/(plugins|options-general)\.php!i', $_SERVER['REQUEST_URI'])) 
   {
-    echo "\n", '<script type="text/javascript" src="', $jsConfig, '?', BOOBOX_STATIC_VERSION, '"><i/script>';
+    echo "\n", '<script type="text/javascript" src="', $jsConfig, '?', BOOBOX_STATIC_VERSION, '"></script>';
   }
 
   $__ = array
