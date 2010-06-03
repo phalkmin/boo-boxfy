@@ -98,7 +98,7 @@ var bb_mailform = function bb_mailform()
                     b.html(" Ok!");
 
                     $("#boo_booid").val(f.userid);
-                    $("#boo_advanced_options, #boo_advanced_button, .button-primary").show();
+                    $("#boo_advanced_button, .button-primary").show();
 
                     $("#boo_advanced_options input[name=boo_booid]").val(f.userid);
                     $("#boo_advanced_options input[name=boo_boomail]").val(f.email);
