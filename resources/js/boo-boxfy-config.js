@@ -56,7 +56,7 @@ var bb_innerAffiliate = function bb_innerAffiliate(a)
     var b = document.getElementById("boo_booaffid");
     if (a.shop && a.lastbid)
     {
-        b.innerHTML = a.shop._name + "(" + a.shop._code + ')<input name="boo_booaffid" type="hidden" value="' + a.lastbid + '=pt-BR" />'
+        b.innerHTML = a.shop._name + (a.shop._code ? ' (' + a.shop._code + ')' : '') + '<input name="boo_booaffid" type="hidden" value="' + a.lastbid + '=pt-BR" />'
     }
     else
     {

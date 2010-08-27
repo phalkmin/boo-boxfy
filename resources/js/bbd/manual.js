@@ -242,23 +242,23 @@ bbD.manual = {
                 $loadingoffers.hide();
                 $offersnotloaded.hide();
                 $offeritems.remove();
-                if (k.item != null) {
-                    if (k.item.length > 0) {
+                if (k.products != null) {
+                    if (k.products.length > 0) {
                         var r = true;
                         var m = '<li class="' + e + 'offeritem"><a href="#" class="' + e + 'offerlink"><span class="' + e + 'offerimage"></span><span class="' + e + 'offerdescription"><span class="' + e + 'offertitle"></span><span class="' + e + 'offerprice"></span></span></a></li>';
-                        var q = k.item.length;
+                        var q = k.products.length;
                         var p = 6;
                         var p = q < p ? q : p;
                         for (var l = 0; l < p; l++) {
-                            var o = k.item[l]._value;
+                            var o = k.products[l];
                             var j = $(m);
                             $("span[class$=offerimage]", j).css("background-image", "url('" + o.img + "')");
-                            $("span[class$=offertitle]", j).html(o._name);
+                            $("span[class$=offertitle]", j).html(o.name);
                             $("span[class$=offerprice]", j).html(o.price);
                             $("span[class$=offertitle]", j).show();
                             var n = $("a[class$=offerlink]", j);
                             n.attr("href", o.url);
-                            n.attr("title", o._name);
+                            n.attr("title", o.name);
                             n.attr("target", "_blank");
                             $offerslist.append(j)
                         }
