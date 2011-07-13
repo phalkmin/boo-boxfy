@@ -3,7 +3,7 @@
 Plugin Name: boo-boxfy
 Plugin URI: http://boo-box.com
 Description: Allows you to monetize your content before posting.
-Version: 2.0.6
+Version: 2.0.7
 Author: boo-box team
 Author URI: http://boo-box.com
 

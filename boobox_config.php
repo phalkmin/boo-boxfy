@@ -41,6 +41,8 @@ function booboxfy_config_submenu()
 
 		update_option("boo_boomail", $_POST["boo_boomail"]);
 		update_option("boo_booid", $_POST["boo_booid"]);
+		//paulo		
+		update_option("boo_formats", "bbb");
 	}
 
 	if (isset($_POST['update_boobox'])) 
@@ -95,6 +97,13 @@ function booboxfy_config_submenu()
 <div class="updated"><p><?php echo __("Saved.", "booboxfy"); ?></p></div>
 		<?php
 	}
+//verifica se o publisher está usando formato Custom e o avisa que deve mudar
+
+if ((get_option("boo_formats") == '') && get_option("boo_booid"))  { ?>
+	<div class="error fade" style="background-color:cyan;"><p><strong><?php  echo __("Oops, you are using an unofficial banner format", "booboxfy"); ?>. <a href="<?php echo get_option('siteurl'); ?>/wp-admin/options-general.php?page=boobox-config"><?php  echo __("Click to change", "booboxfy"); ?></a>.</strong></p></div>
+<?php
+ }
+
 	// config html
 	// mostra campo para edição de e-mail
 	?>
@@ -180,19 +189,21 @@ function booboxfy_config_submenu()
 								<label for="boo_formats"><?php echo __("Format", "booboxfy"); ?>:</label>
 							</th>
 							<td>
-								<ul style="list-style:none" id="widgets-formats">
+
+								<select name="boo_formats">
+
 									<?php
 										$boo_widgets_list = "";
 										foreach ($boo_formats as $format=>$prop) 
 										{
-											$boo_widgets_isFormat = (get_option("boo_formats") && get_option("boo_formats") == $format) ? "checked=\"checked\"" : "";
-											$boo_widgets_list .= "<li><input type=\"radio\" class=\"radio\" name=\"boo_formats\" value=\"" . $format . "\" id=\"" . $format . "\" " . $boo_widgets_isFormat . " /> <label for=\"" . $format . "\">" . $prop["text"] . "</label></li>";
+											if (get_option("boo_formats") && get_option("boo_formats") == $format) { $boo_widgets_isFormat = "selected"; } 
+											elseif (!get_option("boo_formats") && $format == "bbc" && !get_option("boo_booid")) { $boo_widgets_isFormat = "selected"; } else { $boo_widgets_isFormat = ""; }
+											$boo_widgets_list .= "<option  value=\"" . $format . "\"" . $boo_widgets_isFormat ."><label for=\"" . $format . "\">" . $prop["text"] . "</label></option>";
 										}
 										echo $boo_widgets_list;
-										$boo_widgets_pe = (!get_option("boo_formats") || get_option("boo_formats") == "bpe") ? "checked=\"checked\"" : "";
 									?>
-									<li><input type="radio" class="radio" name="boo_formats" value="bpe" id="bpe" <?php echo $boo_widgets_pe ?> /> <label for="bpe">Custom</label></li>
-								</ul>
+								</select>
+
 							</td>
 						</tr>
 						<tr class="boo_pe_advanced">

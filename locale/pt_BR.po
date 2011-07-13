@@ -122,3 +122,9 @@ msgstr "Verificar"
 
 msgid "Modify affiliate"
 msgstr "Modificar afiliado"
+
+msgid "Oops, you are using an unofficial banner format"
+msgstr "Opa, você está usando um formato de banner não-oficial"
+
+msgid "Click to change"
+msgstr "Clique aqui para mudar"
