@@ -41,7 +41,7 @@ function booboxfy_config_submenu()
 
 		update_option("boo_boomail", $_POST["boo_boomail"]);
 		update_option("boo_booid", $_POST["boo_booid"]);
-		//paulo		
+		//seta o valor padrão do formato banner para bbb, durante a instalação		
 		update_option("boo_formats", "bbb");
 	}
 
