@@ -1,5 +1,11 @@
 <?php
-
+//verifica se o last_format não existe ainda e puxa do site boo-box - para atualizações
+if ((get_option("boo_boolastformat") == '') && get_option("boo_boomail"))  { 
+	$url = "http://boo-box.com/profile/login/?boomail=" . get_option("boo_boomail") . "&getlastbid=1";
+	$out = file_get_contents($url);
+	$json = json_decode($out, true);
+	update_option("boo_boolastformat", $json["lastformat"]);
+ }
 // insert options for boo-box
 function booboxfy_config_page() 
 {
@@ -53,7 +59,8 @@ function booboxfy_config_submenu()
 		$booafflang = $affarray[1];
 
 		update_option("boo_booaffid", $booaffid);
-		update_option("boo_booafflang", $booafflang);
+		update_option("boo_booaffid", $booaffid);
+		update_option("boo_boolastformat", $_POST["boo_boolastformat"]);
 
 		if ($_POST["boo_formats"] == "bpe") 
 		{
@@ -158,6 +165,7 @@ if ((get_option("boo_formats") == '') && get_option("boo_booid"))  { ?>
 						</tr>
 						<tr valign="top">
 							<th scope="row">
+								<span id="boo_boolastformat"></span>
 								<label for="boo_shopid"><?php echo __("e-commerce reference code", "booboxfy"); ?>:</label>
 							</th>
 							<td>
@@ -193,6 +201,7 @@ if ((get_option("boo_formats") == '') && get_option("boo_booid"))  { ?>
 								<select name="boo_formats">
 
 									<?php
+										//paulo
 										$boo_widgets_list = "";
 										foreach ($boo_formats as $format=>$prop) 
 										{

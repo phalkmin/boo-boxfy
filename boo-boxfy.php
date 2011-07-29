@@ -3,7 +3,7 @@
 Plugin Name: boo-boxfy
 Plugin URI: http://boo-box.com
 Description: Allows you to monetize your content before posting.
-Version: 2.0.7
+Version: 2.0.8
 Author: boo-box team
 Author URI: http://boo-box.com
 
@@ -30,7 +30,7 @@ Author URI: http://boo-box.com
   THE SOFTWARE.
 */
 
-define('BOOBOX_STATIC_VERSION', '2.0.6');
+define('BOOBOX_STATIC_VERSION', '2.0.8');
 
 // lang
 load_plugin_textdomain(booboxfy, PLUGINDIR . '/' . dirname(plugin_basename(__FILE__)));
@@ -64,7 +64,7 @@ function booboxfy_head()
   {
     echo "\n", '<!-- boo-boxfy (boo-box) -->';
     echo "\n", '<link rel="stylesheet" type="text/css" href="', $css, '" />';
-    echo "\n", '<script type="text/javascript" src="', $js, '?bid=', get_option('boo_booaffid'), '&lang=', get_option('boo_booafflang'), '&email=', get_option('boo_boomail'), '&version=', $wp_version, '&staticver=', BOOBOX_STATIC_VERSION, '" id="booboxfy"></script>';
+    echo "\n", '<script type="text/javascript" src="', $js, '?bid=', get_option('boo_booaffid'), '&lastformat=', get_option('boo_boolastformat'), '&lang=', get_option('boo_booafflang'), '&email=', get_option('boo_boomail'), '&version=', $wp_version, '&staticver=', BOOBOX_STATIC_VERSION, '" id="booboxfy"></script>';
     echo "\n", '<script type="text/javascript" src="', $jsPanel, '?', BOOBOX_STATIC_VERSION, '"></script>';
     echo "\n", '<script type="text/javascript" src="', $jsHelpers, '?', BOOBOX_STATIC_VERSION, '"></script>';
     echo "\n", '<script type="text/javascript" src="', $jsManual, '?', BOOBOX_STATIC_VERSION, '"></script>';
