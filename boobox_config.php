@@ -59,7 +59,7 @@ function booboxfy_config_submenu()
 		$booafflang = $affarray[1];
 
 		update_option("boo_booaffid", $booaffid);
-		update_option("boo_booaffid", $booaffid);
+		update_option("boo_booafflang", $booafflang);
 		update_option("boo_boolastformat", $_POST["boo_boolastformat"]);
 
 		if ($_POST["boo_formats"] == "bpe") 
