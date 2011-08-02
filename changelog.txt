@@ -1,5 +1,14 @@
 boo-boxfy changelog
 
+Version 2.1 - 02-ago-2011
+	Added widgets to sidebar - add boobox banners to your blog with a single click 
+
+Version 2.0.8 - 29-jul-2011
+	Now with less calls to boobox API
+
+Version 2.0.7 - 13-jul-2011
+	Removed banner format "custom" 
+
 Version 2.0.5 - 06-Jun-2010
 	Fixed PHP 4 support (string parsing)
 	Fixed a bug that stopped shopping windows from being displayed

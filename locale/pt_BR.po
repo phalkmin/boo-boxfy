@@ -128,3 +128,10 @@ msgstr "Opa, você está usando um formato de banner não-oficial"
 
 msgid "Click to change"
 msgstr "Clique aqui para mudar"
+
+msgid "Title"
+msgstr "Titulo"
+
+msgid "If left blank, default settings will be used."
+msgstr "Se deixado em branco, será usada a configuração padrão do plugin"
+

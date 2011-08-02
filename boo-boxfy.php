@@ -3,7 +3,7 @@
 Plugin Name: boo-boxfy
 Plugin URI: http://boo-box.com
 Description: Allows you to monetize your content before posting.
-Version: 2.0.8
+Version: 2.1
 Author: boo-box team
 Author URI: http://boo-box.com
 
@@ -30,7 +30,7 @@ Author URI: http://boo-box.com
   THE SOFTWARE.
 */
 
-define('BOOBOX_STATIC_VERSION', '2.0.8');
+define('BOOBOX_STATIC_VERSION', '2.1');
 
 // lang
 load_plugin_textdomain(booboxfy, PLUGINDIR . '/' . dirname(plugin_basename(__FILE__)));
