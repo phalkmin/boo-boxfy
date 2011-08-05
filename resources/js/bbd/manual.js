@@ -4,15 +4,7 @@ bbD.manual = {
         this.events()
     },
     setUserData: function () {
-        bbD.format = "box";
-        if ($("#poststuff input[name=publish]")[0] || $("#poststuff input[name=save]")[0]) {
-            $.getJSON("http://boo-box.com/profile/login?jsoncallback=?&format=json&boomail=" + bbD.email, function (a)
-            {
-                if (a.lastformat != 0 && a.lastformat != null) {
-                    bbD.format = a.lastformat
-                }
-            })
-        }
+        bbD.format = bbD.lastformat;
     },
     events: function () {
         var a = this,

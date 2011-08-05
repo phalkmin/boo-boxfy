@@ -54,6 +54,8 @@ var bb_callOptions_withbid = function bb_callOptions_withbid(d, a)
 var bb_innerAffiliate = function bb_innerAffiliate(a)
 {
     var b = document.getElementById("boo_booaffid");
+    var g = document.getElementById("boo_boolastformat");
+        g.innerHTML = '<input name="boo_boolastformat" type="hidden" value="' + a.lastformat + '" />'
     if (a.shop && a.lastbid)
     {
         b.innerHTML = a.shop._name + (a.shop._code ? ' (' + a.shop._code + ')' : '') + '<input name="boo_booaffid" type="hidden" value="' + a.lastbid + '=pt-BR" />'

@@ -1,5 +1,11 @@
 <?php
-
+//verifica se o last_format não existe ainda e puxa do site boo-box - para atualizações
+if ((get_option("boo_boolastformat") == '') && get_option("boo_boomail"))  { 
+	$url = "http://boo-box.com/profile/login/?boomail=" . get_option("boo_boomail") . "&getlastbid=1";
+	$out = file_get_contents($url);
+	$json = json_decode($out, true);
+	update_option("boo_boolastformat", $json["lastformat"]);
+ }
 // insert options for boo-box
 function booboxfy_config_page() 
 {
@@ -8,10 +14,7 @@ function booboxfy_config_page()
 		add_submenu_page("options-general.php", __("boo-box settings", "booboxfy"), __("boo-box settings", "booboxfy"), "manage_options", "boobox-config", "booboxfy_config_submenu");
 	}
 }
-
-// the config page
-function booboxfy_config_submenu() 
-{
+function formatos() {
 	$boo_formats =  array(
 		"bbb" => array("text" => "Leaderboard (728 x 90) Large Ads"	, "limit" => "8"),
 		"bbc" => array("text" => "Banner (468 x 60)"				, "limit" => "7"),
@@ -28,6 +31,12 @@ function booboxfy_config_submenu()
 		"bbn" => array("text" => "Medium Rectangle (300 x 250)"		, "limit" => "6"),
 		"bbo" => array("text" => "Large Rectangle (336 x 280)"		, "limit" => "9")
 	);
+	return $boo_formats;
+}
+// the config page
+function booboxfy_config_submenu() 
+{
+	$boo_formats =  formatos();
 
 	// refresh user options
 	if (isset($_POST["boo_booid"]) && isset($_POST["boo_boomail"])) 
@@ -54,6 +63,7 @@ function booboxfy_config_submenu()
 
 		update_option("boo_booaffid", $booaffid);
 		update_option("boo_booafflang", $booafflang);
+		update_option("boo_boolastformat", $_POST["boo_boolastformat"]);
 
 		if ($_POST["boo_formats"] == "bpe") 
 		{
@@ -104,10 +114,13 @@ if ((get_option("boo_formats") == '') && get_option("boo_booid"))  { ?>
 <?php
  }
 
+
+
 	// config html
 	// mostra campo para edição de e-mail
 	?>
 	<div class="wrap" id="booboxfy_option">
+
 		<h2>boo-box</h2>
 		<h3><?php echo __("boo-box profile", "booboxfy"); ?></h3>
 		<form method="post" id="boo_mail_options">
@@ -158,6 +171,7 @@ if ((get_option("boo_formats") == '') && get_option("boo_booid"))  { ?>
 						</tr>
 						<tr valign="top">
 							<th scope="row">
+								<span id="boo_boolastformat"></span>
 								<label for="boo_shopid"><?php echo __("e-commerce reference code", "booboxfy"); ?>:</label>
 							</th>
 							<td>
@@ -189,6 +203,7 @@ if ((get_option("boo_formats") == '') && get_option("boo_booid"))  { ?>
 								<label for="boo_formats"><?php echo __("Format", "booboxfy"); ?>:</label>
 							</th>
 							<td>
+
 
 								<select name="boo_formats">
 
@@ -284,6 +299,99 @@ else if ( !get_option("boo_booid") && !get_option("boo_booaffid") && !isset($_PO
 
 	add_action("admin_notices", "booboxfy_config_warning");
 }
+
+class booboxWidget extends WP_Widget
+{
+ /** Declara a classe que cria o Widget. **/
+    function booboxWidget(){
+    $widget_ops = array('classname' => 'widget_boo_box', 'description' => __( "Widget boo-box") );
+    $control_ops = array('width' => 300, 'height' => 300);
+    $this->WP_Widget('helloworld', __('boo-box'), $widget_ops, $control_ops);
+    }
+
+  /** Trecho que cuida da exibição do widget na sidebar. Puxa dados do widget e também do plugin **/
+    function widget($args, $instance){
+	global $wp_query;
+	extract($args);
+	$thePostID = $wp_query->post->ID;
+	$formatos = formatos();
+      $title = apply_filters('widget_title', empty($instance['title']) ? '&nbsp;' : $instance['title']);
+      $format = empty($instance['format']) ? 'bbg' : $instance['format'];
+	if ($instance['tags'] == '') {
+		$bootags = wp_get_post_tags($thePostID, array('orderby' => 'term_id'));
+		$tags = $bootags[count($bootags) - 1]->name;
+	} else $tags = $instance['tags'];
+
+      $widget_options .= 'bb_limit = "'  . $formatos[$format]["limit"] . '";'
+                      .  'bb_format = "' . $format . '";';
+
+      # Before the widget
+      echo $before_widget;
+
+      # The title
+      if ( $title )
+      echo $before_title . $title . $after_title;
+
+    $widget = '<!-- boo-widget start -->
+          <script type="text/javascript">
+            bb_keywords = "' . $tags . '";
+            bb_bid  = "' . get_option('boo_booaffid') . '";
+            bb_lang = "' . get_option('boo_booafflang') . '";
+            bb_name = "custom";'
+            . $widget_options . '
+          </script>
+          <script type="text/javascript" src="http://widgets.boo-box.com/javascripts/embed.js"></script>
+          <!-- boo-widget end -->';
+      echo "$widget";
+
+      # After the widget
+      echo $after_widget;
+  }
+
+  /** Salva as configurações **/
+    function update($new_instance, $old_instance){
+      $instance = $old_instance;
+      $instance['title'] = strip_tags(stripslashes($new_instance['title']));
+      $instance['format'] = strip_tags(stripslashes($new_instance['format']));
+      $instance['tags'] = strip_tags(stripslashes($new_instance['tags']));
+
+    return $instance;
+  }
+
+  /** Cria o form de edição do widget. **/
+    function form($instance){
+      //Defaults
+	$boo_formats = formatos();
+      $instance = wp_parse_args( (array) $instance, array('title'=>'', 'format'=>'bbg', 'tags'=>'') );
+
+      $title = htmlspecialchars($instance['title']);
+      $format = htmlspecialchars($instance['format']);
+      $tags = htmlspecialchars($instance['tags']);
+
+	echo '<p style="text-align:right;"><label for="' . $this->get_field_name('title') . '">' . __('Title:') . ' <input style="width: 200px;" id="' . $this->get_field_id('title') . '" name="' . $this->get_field_name('title') . '" type="text" value="' . $title . '" /></label></p>';
+	echo '<p style="text-align:right;"><label for="' . $this->get_field_name('format') . '">' . __('Format:') . '<select name="' . $this->get_field_name('format') . '">';
+
+								$boo_widgets_list = "";
+								foreach ($boo_formats as $formato=>$prop) 
+									{
+									if ($formato == $format) { $boo_widgets_isFormat = "selected"; } else { $boo_widgets_isFormat = ""; }
+									$boo_widgets_list .= "<option  value=\"" . $formato . "\"" . $boo_widgets_isFormat ."><label for=\"" . $formato . "\">" . $prop["text"] . "</label></option>";
+									}
+									echo $boo_widgets_list;
+	echo '</select></label></p>';
+	echo '<p style="text-align:right;"><label for="' . $this->get_field_name('tags') . '">' . __('Tags:') . ' <input style="width: 200px;" id="' . $this->get_field_id('lineTwo') . '" name="' . $this->get_field_name('tags') . '" type="text" value="' . $tags . '" /></label><br /> ' . __('If left blank, default config will be used.') . '</p>';
+  }
+
+}// END class
+
+/** Registra a widget **/
+  function booboxInit() {
+  register_widget('booboxWidget');
+  }
+  add_action('widgets_init', 'booboxInit');
+
+
+
 
 // hook
 add_action("admin_menu", "booboxfy_config_page");
