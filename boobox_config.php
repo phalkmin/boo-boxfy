@@ -64,6 +64,8 @@ function booboxfy_config_submenu()
 		update_option("boo_booaffid", $booaffid);
 		update_option("boo_booafflang", $booafflang);
 		update_option("boo_boolastformat", $_POST["boo_boolastformat"]);
+		update_option("boo_position", $_POST["boo_position"]);
+
 
 		if ($_POST["boo_formats"] == "bpe") 
 		{
@@ -254,6 +256,17 @@ if ((get_option("boo_formats") == '') && get_option("boo_booid"))  { ?>
 									<li><input type="checkbox" name="boo_gettag" id="boo_gettag" <?php if (get_option("boo_gettag")) { echo "checked=\"checked\""; } ?> /> <label for="boo_gettag"><?php echo __("Use the last tag on the post to search products on the widget, in case the defined tag is not specific to boo-box.", "booboxfy"); ?></label></li>
 									<li><input type="checkbox" name="boo_nohome" id="boo_nohome" <?php if (get_option("boo_nohome")) { echo "checked=\"checked\""; } ?> /> <label for="boo_nohome"><?php echo __("Not display widget in home", "booboxfy"); ?></label></li>
 								</ul>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">
+								<label for="boo_width"><?php echo __("Position", "booboxfy"); ?>:</label>
+							</th>
+							<td>
+								<select name="boo_position">
+									<option <?php if (get_option("boo_position") == "top") { echo "selected"; } ?> value="top"><label for="top"><?php echo __("Top", "booboxfy"); ?></label></option>
+									<option <?php if (get_option("boo_position") == "bottom") { echo "selected"; } ?> value="bottom"><label for="bottom"><?php echo __("Bottom", "booboxfy"); ?></label></option>
+								</select>
 							</td>
 						</tr>
 					</tbody>
