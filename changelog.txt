@@ -1,5 +1,8 @@
 boo-boxfy changelog
 
+Version 2.1.1 - 02-ago-2011
+	Now the user can choose if the banner will be in top or bottom of the post
+
 Version 2.1 - 02-ago-2011
 	Added widgets to sidebar - add boobox banners to your blog with a single click 
 

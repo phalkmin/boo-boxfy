@@ -135,3 +135,12 @@ msgstr "Titulo"
 msgid "If left blank, default settings will be used."
 msgstr "Se deixado em branco, será usada a configuração padrão do plugin"
 
+msgid "Position"
+msgstr "Posição"
+
+msgid "Top"
+msgstr "Topo"
+
+msgid "Bottom"
+msgstr "Rodapé"
+
