@@ -2,7 +2,13 @@
 //verifica se o last_format não existe ainda e puxa do site boo-box - para atualizações
 if ((get_option("boo_boolastformat") == '') && get_option("boo_boomail"))  { 
 	$url = "http://boo-box.com/profile/login/?boomail=" . get_option("boo_boomail") . "&getlastbid=1";
-	$out = file_get_contents($url);
+	$ch = curl_init(); 
+	$timeout = 0; 
+	curl_setopt ($ch, CURLOPT_URL, '$url'); 
+	curl_setopt ($ch, CURLOPT_RETURNTRANSFER, 1); 
+	curl_setopt ($ch, CURLOPT_CONNECTTIMEOUT, $timeout); 
+	$out = curl_exec($ch); 
+	curl_close($ch); 
 	$json = json_decode($out, true);
 	update_option("boo_boolastformat", $json["lastformat"]);
  }
