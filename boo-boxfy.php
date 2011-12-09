@@ -39,7 +39,7 @@ load_plugin_textdomain(booboxfy, PLUGINDIR . '/' . dirname(plugin_basename(__FIL
 require_once('boobox_config.php');
 
 // insert <script> on <head>
-function booboxfy_head() 
+function booboxfy_head()
 {
   global $wp_db_version;
   global $wp_version;
@@ -60,7 +60,7 @@ function booboxfy_head()
 
   $autoEnabled  = (get_option('boo_autotag') && ( ! array_key_exists('page', $_GET) || $_GET['page'] != 'boobox-config'));
 
-  if (preg_match('!/post(-new)?\.php!i', $_SERVER['REQUEST_URI'])) 
+  if (preg_match('!/post(-new)?\.php!i', $_SERVER['REQUEST_URI']))
   {
     echo "\n", '<!-- boo-boxfy (boo-box) -->';
     echo "\n", '<link rel="stylesheet" type="text/css" href="', $css, '" />';
@@ -78,7 +78,7 @@ function booboxfy_head()
          "\n", '  });',
          "\n", '</script>';
   }
-  else if (preg_match('!/(plugins|options-general)\.php!i', $_SERVER['REQUEST_URI'])) 
+  else if (preg_match('!/(plugins|options-general)\.php!i', $_SERVER['REQUEST_URI']))
   {
     echo "\n", '<script type="text/javascript" src="', $jsConfig, '?', BOOBOX_STATIC_VERSION, '"></script>';
   }
@@ -104,11 +104,11 @@ function booboxfy_head()
       cont        : 'Imagens / YouTube',
       none        : '{$__['none']}',
       noconfig    : '{$__['noconfig']}',
-      closewindow : 'Fechar', 
-      applyto     : 'Aplicar', 
-      selectone   : '{$__['selectone']}', 
-      configbtn   : '{$__['configbtn']}', 
-      remove      : '{$__['remove']}', 
+      closewindow : 'Fechar',
+      applyto     : 'Aplicar',
+      selectone   : '{$__['selectone']}',
+      configbtn   : '{$__['configbtn']}',
+      remove      : '{$__['remove']}',
       image       : '{$__['image']}'
     }
 
@@ -128,7 +128,7 @@ HTML;
 }
 
 // insere campos extras de widget na interface
-function bb_insert_custom($id) 
+function bb_insert_custom($id)
 {
   global $post;
 
@@ -142,24 +142,24 @@ function bb_insert_custom($id)
 }
 
 // manipula os campos extras
-function edit_meta_value($id) 
+function edit_meta_value($id)
 {
   global $wpdb;
 
   // caso não tenha id, tenta pegar da edição
-  if (empty($id)) 
+  if (empty($id))
   {
     $id = $_REQUEST['post_ID'];
   }
 
   // caso o usuário não poder fuçar, trava ele
-  if ( ! current_user_can('edit_post', $id)) 
+  if ( ! current_user_can('edit_post', $id))
   {
     return $id;
   }
 
   // caso a primeira função (a que inclui os campos) não ter funcionado, trava
-  if ( ! wp_verify_nonce($_REQUEST['bb-custom-field-verify-key'], 'bb-custom-field')) 
+  if ( ! wp_verify_nonce($_REQUEST['bb-custom-field-verify-key'], 'bb-custom-field'))
   {
     return $id;
   }
@@ -167,7 +167,7 @@ function edit_meta_value($id)
   // passa pelos dois campos
   $fields = array('bb-custom-tags');
 
-  foreach ($fields as $title) 
+  foreach ($fields as $title)
   {
     $title = $wpdb->escape(stripslashes(trim($title)));
 
@@ -177,18 +177,18 @@ function edit_meta_value($id)
     delete_post_meta($id, $title);
 
     // e escreve somente se tiver valor
-    if ( ! empty($meta_value)) 
+    if ( ! empty($meta_value))
     {
       add_post_meta($id, $title, $meta_value);
     }
   }
 }
 
-function show_widget($content) 
+function show_widget($content)
 {
   global $post;
 
-  if ((is_front_page() || is_paged()) && get_option('boo_nohome')) 
+  if ((is_front_page() || is_paged()) && get_option('boo_nohome'))
   {
     return $content;
     exit;
@@ -198,11 +198,11 @@ function show_widget($content)
   $widget_keyword = '';
 
   // se tiver keyword definida
-  if ( ! empty($keywords)) 
+  if ( ! empty($keywords))
   {
     $widget_keyword = $keywords;
   }
-  else if (get_option('boo_gettag')) 
+  else if (get_option('boo_gettag'))
   {
     // pega a última tag cadastrada para esse post
     $tags = wp_get_post_tags($post->ID, array('orderby' => 'term_id'));
@@ -213,12 +213,12 @@ function show_widget($content)
   {
     $widget_options = '';
 
-    if ( ! get_option('boo_formats') || get_option('boo_formats') == '') 
+    if ( ! get_option('boo_formats') || get_option('boo_formats') == '')
     {
       $widget_options .= 'bb_width = "' . get_option('boo_width') . '";'
                       .  'bb_limit = "' . get_option('boo_limit') . '";';
     }
-    else 
+    else
     {
       $widget_options .= 'bb_limit = "'  . get_option('boo_limit') . '";'
                       .  'bb_format = "' . get_option('boo_formats') . '";';
@@ -240,20 +240,20 @@ function show_widget($content)
 		return $content . $widget;
 	}
   }
-  else 
+  else
   {
     return $content;
   }
 }
 
-function mce3_booboxfy($arr) 
+function mce3_booboxfy($arr)
 {
   $path = get_option('siteurl') . '/wp-content/plugins/boo-boxfy/resources/js/mce3_booboxfy.js';
   $arr['booboxfymce'] = $path;
   return $arr;
 }
 
-function mce3_booboxfy_button($arr) 
+function mce3_booboxfy_button($arr)
 {
   $arr[] = 'booboxfymce';
   return $arr;
@@ -261,10 +261,10 @@ function mce3_booboxfy_button($arr)
 
 // hooks
 // start atomic bomb with the insert on head of pages
-if ( ! function_exists('boo_head_script')) 
+if ( ! function_exists('boo_head_script'))
 {
   // insert <script> on <head>
-  function boo_head_script() 
+  function boo_head_script()
   {
     global $boobox_head_added;
 

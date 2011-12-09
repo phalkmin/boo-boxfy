@@ -10,8 +10,8 @@ if (typeof(bbD) == 'undefined') {
 	var le_fake_dom;
 
 	// do key:value in js querysring
-	bbD.add = function( key, val ){
-		bbD[ key ] = val;
+	bbD.add = function(key, val) {
+		bbD[key] = val;
 	}
 	// get affiliated options
 	var codePairs = $("#booboxfy").attr('src').split('?')[1].split('&');
@@ -23,9 +23,9 @@ if (typeof(bbD) == 'undefined') {
 }
 
 // ensina o IE como escrever html
-function fIE (dom) {
+function fIE(dom) {
 	// downcase em nome de tag
-	dom = dom.replace(/<([^> ]*)/gi,function(s){
+	dom = dom.replace(/<([^> ]*)/gi, function(s) {
 		return s.toLowerCase();
 	});
 	// deleta tag do jquery
@@ -34,3 +34,4 @@ function fIE (dom) {
 	dom = dom.replace(/( )?([^ =]*)=([^"'>][^ >]*)/gi, '$1$2="$3"');
 	return dom;
 };
+
