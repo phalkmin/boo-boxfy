@@ -13,13 +13,6 @@ if (typeof(bbD) == 'undefined') {
 	bbD.add = function(key, val) {
 		bbD[key] = val;
 	}
-	// get affiliated options
-	var codePairs = $("#booboxfy").attr('src').split('?')[1].split('&');
-	$(codePairs).each( function(i){
-		// cria um atributo novo no elm DOM
-		// pega dois valores e coloca os como key e value respectivamente
-		bbD.add( this.split('=')[0], this.split('=')[1] );
-	});
 }
 
 // ensina o IE como escrever html
