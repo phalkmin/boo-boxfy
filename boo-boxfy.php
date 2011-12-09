@@ -112,10 +112,12 @@ function booboxfy_head()
       image       : '{$__['image']}'
     }
 
-    $ = jQuery.noConflict();
+    var $ = jQuery.noConflict();
 
     $(document).ready(function()
     {
+      var $ = jQuery.noConflict();
+
       $('#boo_advanced_button').click(function()
       {
         $('#boo_advanced_options').toggle();
